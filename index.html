@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Tatva — Premium A2 Gir Cow Ghee</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --gold:#C9922A;--gold2:#E8B84B;--gold3:#F5D980;
+  --gold-pale:#FDF0C8;--cream:#FDF8EE;--cream2:#F5E8CC;--cream3:#EED9A8;
+  --brown:#6B3A1F;--brown2:#4A2510;--brown3:#2E1608;
+  --text:#2E1608;--muted:#8B5E3C;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:radial-gradient(circle at 1px 1px,rgba(201,146,42,0.07) 1px,transparent 0);
+  background-size:32px 32px;pointer-events:none;z-index:0;
+}
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:var(--brown3);
+  border-bottom:2px solid var(--gold);
+  padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:64px;
+}
+.nav-gold-bar{position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold2),var(--gold3),var(--gold2),transparent);}
+.nav-logo{font-family:'Cinzel',serif;font-size:1.5rem;font-weight:700;color:var(--cream);letter-spacing:0.08em;}
+.nav-logo span{color:var(--gold2);}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--cream3);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold2);}
+.nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold2);padding:0.5rem 1.5rem;
+  font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.nav-cta:hover{background:var(--gold);color:var(--brown3);}
+/* HERO */
+.hero{
+  min-height:100vh;display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;padding:7rem 5rem 4rem;
+  position:relative;z-index:1;
+  background:radial-gradient(ellipse 80% 60% at 65% 40%,rgba(201,146,42,0.09) 0%,transparent 70%),var(--cream);
+}
+.hero::before{content:'';position:absolute;top:80px;left:2rem;right:2rem;bottom:1rem;
+  border:1px solid rgba(201,146,42,0.18);pointer-events:none;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:var(--brown3);color:var(--gold2);
+  font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;
+  padding:0.45rem 1.2rem;border:1px solid var(--gold);margin-bottom:1.5rem;
+}
+.hero-tag::before,.hero-tag::after{content:'✦';font-size:0.6rem;}
+.hero h1{font-family:'Cinzel',serif;font-size:clamp(2rem,3.8vw,3.2rem);font-weight:700;line-height:1.15;color:var(--brown3);margin-bottom:0.4rem;letter-spacing:0.03em;}
+.hero h1 .italic{font-family:'Crimson Text',serif;font-style:italic;font-weight:600;font-size:clamp(2.4rem,4.2vw,3.7rem);color:var(--gold);display:block;}
+.hero-loc{font-family:'Crimson Text',serif;font-size:0.95rem;font-style:italic;color:var(--muted);letter-spacing:0.06em;margin-bottom:1.5rem;}
+.hero-desc{font-size:0.88rem;font-weight:300;line-height:1.95;color:var(--brown);max-width:430px;margin-bottom:2rem;border-left:2px solid var(--gold);padding-left:1rem;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-gold{background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 50%,var(--gold) 100%);color:var(--brown3);
+  padding:0.9rem 2rem;border:none;font-family:'Jost',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;transition:opacity 0.2s,transform 0.15s;display:inline-block;box-shadow:0 2px 16px rgba(201,146,42,0.3);}
+.btn-gold:hover{opacity:0.88;transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:var(--brown2);padding:0.9rem 2rem;border:1px solid var(--gold);
+  font-family:'Jost',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-block;}
+.btn-ghost:hover{background:var(--gold-pale);}
+/* medallion */
+.hero-visual{display:flex;justify-content:center;align-items:center;position:relative;}
+.medallion{position:relative;width:400px;height:400px;display:flex;align-items:center;justify-content:center;}
+.ring{position:absolute;border-radius:50%;border:1px solid var(--gold);}
+.ring1{inset:0;border-style:dashed;animation:spin 50s linear infinite;}
+.ring2{inset:18px;border-color:rgba(232,184,75,0.45);}
+.ring3{inset:36px;border-color:rgba(232,184,75,0.2);}
+@keyframes spin{to{transform:rotate(360deg);}}
+.medallion-img{width:280px;height:280px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);
+  box-shadow:0 0 0 8px var(--cream2),0 0 0 10px var(--gold),0 8px 40px rgba(92,58,30,0.2);z-index:1;position:relative;}
+.med-dot{position:absolute;color:var(--gold2);font-size:1.1rem;z-index:2;}
+.med-dot.top{top:6px;left:50%;transform:translateX(-50%);}
+.med-dot.bot{bottom:6px;left:50%;transform:translateX(-50%);}
+.med-badge{position:absolute;background:var(--brown3);border:1px solid var(--gold);padding:0.6rem 1rem;z-index:3;}
+.med-badge .v{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:var(--gold2);display:block;line-height:1;}
+.med-badge{font-size:0.68rem;font-weight:500;letter-spacing:0.05em;color:var(--cream2);}
+.med-badge.b1{bottom:55px;left:-10px;}
+.med-badge.b2{top:65px;right:-20px;}
+/* BANNER */
+.banner{background:var(--brown3);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);
+  padding:1.2rem 4rem;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;position:relative;z-index:1;}
+.bi{display:flex;align-items:center;gap:0.55rem;color:var(--cream2);font-size:0.72rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;}
+.bi::before{content:'✦';color:var(--gold2);font-size:0.65rem;}
+.bsep{color:rgba(232,184,75,0.25);font-size:1.1rem;}
+/* SECTION BASE */
+section{padding:6rem 4rem;position:relative;z-index:1;}
+.eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem;}
+.eyebrow::before,.eyebrow::after{content:'';display:block;height:1px;width:40px;background:var(--gold);}
+.eyebrow span{font-size:0.68rem;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);}
+.s-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:600;line-height:1.2;color:var(--brown3);letter-spacing:0.02em;margin-bottom:1rem;}
+.s-sub{font-family:'Crimson Text',serif;font-size:1.08rem;line-height:1.85;color:var(--muted);max-width:560px;font-style:italic;}
+/* ABOUT */
+.about{background:var(--brown3);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.about::before{content:'';position:absolute;inset:2rem;border:1px solid rgba(201,146,42,0.14);pointer-events:none;}
+.about .eyebrow::before,.about .eyebrow::after{background:var(--gold2);}
+.about .eyebrow span{color:var(--gold2);}
+.about .s-title{color:var(--cream);}
+.about .s-sub{color:rgba(245,232,204,0.68);}
+.about-body{font-family:'Crimson Text',serif;font-size:1.03rem;line-height:1.9;color:rgba(245,232,204,0.72);margin-top:1rem;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:2.5rem;border:1px solid rgba(201,146,42,0.28);background:rgba(201,146,42,0.28);}
+.stat{background:rgba(46,22,8,0.85);padding:1.25rem;text-align:center;}
+.stat-n{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:700;color:var(--gold2);display:block;}
+.stat-l{font-size:0.68rem;font-weight:400;letter-spacing:0.1em;color:rgba(245,232,204,0.45);text-transform:uppercase;margin-top:0.2rem;display:block;}
+.about-frame{position:relative;}
+.about-frame-box{border:2px solid var(--gold);padding:1rem;background:var(--brown2);}
+.about-frame::before{content:'';position:absolute;top:12px;left:12px;right:-12px;bottom:-12px;border:1px solid rgba(201,146,42,0.25);z-index:-1;}
+.about-frame img{width:100%;display:block;filter:sepia(15%) contrast(1.05);}
+.about-frame-cap{text-align:center;margin-top:0.75rem;font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.2em;color:var(--gold2);text-transform:uppercase;}
+/* BENEFITS */
+.benefits{background:var(--cream2);}
+.benefits-head{text-align:center;margin-bottom:0.5rem;}
+.benefits-head .eyebrow{justify-content:center;}
+.benefits-head .s-sub{margin:0 auto;}
+.ornate{text-align:center;padding:1.5rem 0 2.5rem;color:var(--gold);font-size:0.9rem;letter-spacing:0.5em;}
+.b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto;}
+.b-card{background:var(--cream);border:1px solid rgba(201,146,42,0.3);padding:2rem 1.5rem;position:relative;transition:border-color 0.25s,transform 0.25s;}
+.b-card:hover{border-color:var(--gold);transform:translateY(-4px);}
+.b-card::before,.b-card::after{content:'';position:absolute;width:10px;height:10px;border:1px solid var(--gold2);}
+.b-card::before{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+.b-card::after{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.b-icon{width:48px;height:48px;border:1px solid rgba(201,146,42,0.4);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;background:var(--gold-pale);}
+.b-card h3{font-family:'Cinzel',serif;font-size:0.9rem;font-weight:600;color:var(--brown3);margin-bottom:0.6rem;letter-spacing:0.04em;}
+.b-card p{font-family:'Crimson Text',serif;font-size:1rem;line-height:1.75;color:var(--muted);}
+/* PROCESS */
+.process{background:var(--brown2);}
+.process .eyebrow::before,.process .eyebrow::after{background:var(--gold2);}
+.process .eyebrow span{color:var(--gold2);}
+.process .s-title{color:var(--cream);}
+.proc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;max-width:1100px;margin:0 auto;}
+.steps{margin-top:2rem;}
+.step{display:flex;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid rgba(201,146,42,0.14);}
+.step:last-child{border-bottom:none;}
+.step-n{font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:rgba(201,146,42,0.28);line-height:1;min-width:44px;}
+.step h4{font-family:'Cinzel',serif;font-size:0.85rem;font-weight:600;color:var(--gold2);margin-bottom:0.4rem;letter-spacing:0.06em;text-transform:uppercase;}
+.step p{font-family:'Crimson Text',serif;font-size:1rem;line-height:1.8;color:rgba(245,232,204,0.62);}
+.proc-panel{background:rgba(46,22,8,0.65);border:2px solid var(--gold);padding:2.5rem;position:sticky;top:6rem;text-align:center;}
+.proc-panel::before,.proc-panel::after{content:'';position:absolute;width:14px;height:14px;border:2px solid var(--gold2);}
+.proc-panel::before{top:-2px;left:-2px;border-right:none;border-bottom:none;}
+.proc-panel::after{bottom:-2px;right:-2px;border-left:none;border-top:none;}
+.p-orn{font-size:1.4rem;color:var(--gold2);letter-spacing:0.5em;margin-bottom:1.5rem;display:block;}
+.p-quote{font-family:'Crimson Text',serif;font-size:1.6rem;font-weight:600;font-style:italic;color:var(--cream);line-height:1.5;margin-bottom:1rem;}
+.p-attr{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold2);}
+.p-div{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold2),transparent);margin:1.5rem auto;}
+.p-detail{font-family:'Crimson Text',serif;font-size:0.95rem;line-height:1.9;color:rgba(245,232,204,0.58);}
+.p-detail strong{color:var(--cream);}
+/* TESTIMONIALS */
+.testimonials{background:var(--cream);}
+.t-head{text-align:center;margin-bottom:0.5rem;}
+.t-head .eyebrow{justify-content:center;}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:3rem auto 0;}
+.t-card{background:var(--cream2);border:1px solid rgba(201,146,42,0.28);padding:2rem;position:relative;}
+.t-card::before{content:'"';font-family:'Crimson Text',serif;font-size:5rem;line-height:1;color:var(--gold-pale);position:absolute;top:-0.5rem;left:1rem;}
+.t-stars{color:var(--gold2);font-size:0.8rem;margin-bottom:1rem;}
+.t-text{font-family:'Crimson Text',serif;font-size:1.05rem;font-style:italic;line-height:1.75;color:var(--brown);margin-bottom:1.25rem;position:relative;z-index:1;}
+.t-author{font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+/* CTA */
+.cta{background:var(--brown3);text-align:center;padding:7rem 4rem;position:relative;overflow:hidden;}
+.cta::before{content:'';position:absolute;inset:2rem;border:1px solid rgba(201,146,42,0.18);pointer-events:none;}
+.cta-orn{position:absolute;left:50%;transform:translateX(-50%);color:var(--gold2);font-size:0.85rem;letter-spacing:0.5em;white-space:nowrap;}
+.cta-orn.t{top:1.5rem;}.cta-orn.b{bottom:1.5rem;}
+.cta .eyebrow{justify-content:center;}
+.cta .eyebrow::before,.cta .eyebrow::after{background:var(--gold2);}
+.cta .eyebrow span{color:var(--gold2);}
+.cta .s-title{color:var(--cream);margin:0 auto 0.75rem;}
+.cta-sub{font-family:'Crimson Text',serif;font-size:1.08rem;font-style:italic;color:rgba(245,232,204,0.62);max-width:500px;margin:0 auto 2.5rem;line-height:1.8;}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-wa{background:#25D366;color:#fff;padding:1rem 2rem;border:none;font-family:'Jost',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:opacity 0.2s,transform 0.15s;display:inline-block;}
+.btn-wa:hover{opacity:0.9;transform:translateY(-2px);}
+/* FOOTER */
+footer{background:#180C04;border-top:2px solid var(--gold);padding:2.5rem 4rem;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;position:relative;}
+.f-bar{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold2),var(--gold3),var(--gold2),transparent);}
+.f-logo{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:var(--cream);letter-spacing:0.06em;margin-bottom:0.3rem;}
+.f-logo span{color:var(--gold2);}
+.f-tag{font-family:'Crimson Text',serif;font-size:0.88rem;font-style:italic;color:rgba(245,232,204,0.38);}
+.f-info{text-align:right;}
+.f-info p{font-size:0.74rem;line-height:2;color:rgba(245,232,204,0.42);}
+.f-info a{color:var(--gold2);text-decoration:none;}
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.hero-tag{animation:fadeUp 0.6s ease both;}
+.hero h1{animation:fadeUp 0.7s 0.1s ease both;}
+.hero-loc{animation:fadeUp 0.7s 0.15s ease both;}
+.hero-desc{animation:fadeUp 0.7s 0.2s ease both;}
+.hero-actions{animation:fadeUp 0.7s 0.3s ease both;}
+.hero-visual{animation:fadeUp 0.9s 0.2s ease both;}
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:0 1.5rem;}.nav-links{display:none;}
+  .hero,.about,.proc-wrap{grid-template-columns:1fr;padding:5rem 1.5rem 3rem;}
+  .hero-visual{order:-1;}.medallion{width:260px;height:260px;}.medallion-img{width:190px;height:190px;}
+  .b-grid,.t-grid{grid-template-columns:1fr;}
+  section{padding:4rem 1.5rem;}
+  footer{grid-template-columns:1fr;text-align:center;}.f-info{text-align:center;}
+  .cta{padding:5rem 1.5rem;}.banner{padding:1rem 1.5rem;gap:1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-gold-bar"></div>
+  <div class="nav-logo">Dev<span>Tatva</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Order</a></li>
+  </ul>
+  <a href="https://wa.me/918820412325" class="nav-cta" target="_blank">✦ Order Now</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-tag">✦ Premium A2 Gir Cow Ghee ✦</div>
+    <h1>
+      Pure Desi Ghee
+      <span class="italic">Made the Ancient Way</span>
+    </h1>
+    <p class="hero-loc">— Traditional Bilona Method · Maharashtra —</p>
+    <p class="hero-desc">Crafted from grass-fed indigenous Gir cows using the time-honoured Bilona hand-churning process. Rich in A2 protein, Omega-3, and divine aroma. No preservatives. No compromise.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/918820412325" class="btn-gold" target="_blank">✦ Order on WhatsApp</a>
+      <a href="#process" class="btn-ghost">Our Process</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="medallion">
+      <div class="ring ring1"></div>
+      <div class="ring ring2"></div>
+      <div class="ring ring3"></div>
+      <span class="med-dot top">✦</span>
+      <span class="med-dot bot">✦</span>
+      <img class="medallion-img" src="A2_cow_ghee.jpg" alt="Dev Tatva A2 Gir Cow Ghee">
+    </div>
+    <div class="med-badge b1"><span class="v">A2</span>Pure Protein</div>
+    <div class="med-badge b2"><span class="v">100%</span>Natural</div>
+  </div>
+</section>
+
+<div class="banner">
+  <div class="bi">FSSAI Certified</div><span class="bsep">|</span>
+  <div class="bi">Pure Gir Cow A2 Milk</div><span class="bsep">|</span>
+  <div class="bi">Traditional Bilona Method</div><span class="bsep">|</span>
+  <div class="bi">No Preservatives</div><span class="bsep">|</span>
+  <div class="bi">Eat Natural · Defend Health</div>
+</div>
+
+<section class="about" id="about">
+  <div>
+    <div class="eyebrow"><span>Our Story</span></div>
+    <h2 class="s-title">A Promise of Purity,<br>Farm to Kitchen</h2>
+    <p class="s-sub">Rooted in ancient Indian tradition, Dev Tatva brings you ghee the way it was always meant to be made.</p>
+    <p class="about-body">At Prashant Milk Products, we believe true nourishment comes from purity. Our A2 Gir Cow Ghee is sourced from pure-breed, grass-fed desi Gir cows and made in small, careful batches using the traditional Bilona method — preserving every drop of goodness that nature intended.</p>
+    <div class="about-stats">
+      <div class="stat"><span class="stat-n">A2</span><span class="stat-l">Protein Milk Only</span></div>
+      <div class="stat"><span class="stat-n">9 mo</span><span class="stat-l">Shelf Life, Natural</span></div>
+      <div class="stat"><span class="stat-n">Gir</span><span class="stat-l">Indigenous Breed</span></div>
+      <div class="stat"><span class="stat-n">FSSAI</span><span class="stat-l">Certified Facility</span></div>
+    </div>
+  </div>
+  <div class="about-frame">
+    <div class="about-frame-box">
+      <img src="A2_cow_ghee.jpg" alt="Dev Tatva Product">
+      <p class="about-frame-cap">✦ Dev Tatva · भारत देशी तूप ✦</p>
+    </div>
+  </div>
+</section>
+
+<section class="benefits" id="benefits">
+  <div class="benefits-head">
+    <div class="eyebrow"><span>Why Choose Us</span></div>
+    <h2 class="s-title">What Makes Our Ghee Different</h2>
+    <p class="s-sub">From the cow breed to the churning method — every detail is intentional, every batch made with reverence.</p>
+  </div>
+  <div class="ornate">✦ &nbsp; ✦ &nbsp; ✦</div>
+  <div class="b-grid">
+    <div class="b-card">
+      <div class="b-icon">🐄</div>
+      <h3>Pure A2 Protein</h3>
+      <p>Made exclusively from the milk of indigenous Gir cows — no crossbred or hybrid cattle. Gentler on digestion and richer in nutrients.</p>
+    </div>
+    <div class="b-card">
+      <div class="b-icon">🪵</div>
+      <h3>Bilona Method</h3>
+      <p>Hand-churned in small batches using a traditional wooden bilona, slow-cooked to perfection — exactly as our ancestors made it for centuries.</p>
+    </div>
+    <div class="b-card">
+      <div class="b-icon">💛</div>
+      <h3>Rich in Nutrients</h3>
+      <p>Naturally loaded with Omega-3 fatty acids, vitamins A, D, E & K, and healthy fats your body absorbs easily and gratefully.</p>
+    </div>
+    <div class="b-card">
+      <div class="b-icon">🌿</div>
+      <h3>100% Natural</h3>
+      <p>No preservatives, additives, or artificial colour. Pure, golden, aromatic ghee — nothing more, nothing less.</p>
+    </div>
+    <div class="b-card">
+      <div class="b-icon">🏅</div>
+      <h3>FSSAI Certified</h3>
+      <p>Manufactured in a registered facility with full quality compliance. Every jar is safe, tested, and trustworthy.</p>
+    </div>
+    <div class="b-card">
+      <div class="b-icon">✨</div>
+      <h3>Divine Aroma & Taste</h3>
+      <p>The Bilona process creates a naturally grainy texture and rich, nutty aroma that instantly reminds you of home and wholeness.</p>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="proc-wrap">
+    <div>
+      <div class="eyebrow"><span>How It's Made</span></div>
+      <h2 class="s-title">From Cow to Kitchen —<br>The Bilona Way</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-n">01</span>
+          <div>
+            <h4>Fresh Milk Collected</h4>
+            <p>Pure A2 milk collected daily from our indigenous Gir cows, grazed freely on open natural pastures in Maharashtra.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-n">02</span>
+          <div>
+            <h4>Boiled & Set into Curd</h4>
+            <p>Milk is gently boiled and cultured overnight into thick, creamy makhan — the living foundation of real ghee.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-n">03</span>
+          <div>
+            <h4>Hand-Churned with Wooden Bilona</h4>
+            <p>Makkhan is slowly hand-churned using a traditional wooden bilona, separating pure butter exactly as done for thousands of years.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-n">04</span>
+          <div>
+            <h4>Slow-Cooked to Golden Ghee</h4>
+            <p>Butter is gently simmered on low heat until it transforms into pure, aromatic, golden A2 ghee — then carefully jarred with love.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="proc-panel">
+      <span class="p-orn">✦ ✦ ✦</span>
+      <p class="p-quote">"Eat Natural.<br>Defend Health."</p>
+      <p class="p-attr">— Dev Tatva Philosophy</p>
+      <div class="p-div"></div>
+      <p class="p-detail">
+        Manufactured with pride by<br>
+        <strong>Prashant Milk Products</strong><br>
+        Chitkanthana MIDC, Aurangabad<br>
+        Maharashtra — 431101<br><br>
+        FSSAI Lic. No. 10012345600000
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="t-head">
+    <div class="eyebrow"><span>Trusted By Families</span></div>
+    <h2 class="s-title">What Our Customers Say</h2>
+  </div>
+  <div class="t-grid">
+    <div class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">The aroma alone tells you this is real ghee. My entire family has switched to Dev Tatva and we will never go back.</p>
+      <p class="t-author">— Sunita R., Pune</p>
+    </div>
+    <div class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">Finally found ghee that tastes exactly like what my grandmother used to make. Pure, honest, and deeply satisfying.</p>
+      <p class="t-author">— Ramesh K., Nashik</p>
+    </div>
+    <div class="t-card">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">My doctor suggested A2 ghee for digestion and Dev Tatva has made a real difference. Pure quality you can feel.</p>
+      <p class="t-author">— Priya M., Mumbai</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <span class="cta-orn t">✦ &nbsp; ✦ &nbsp; ✦ &nbsp; ✦ &nbsp; ✦</span>
+  <div class="eyebrow" style="justify-content:center;"><span>Order Today</span></div>
+  <h2 class="s-title" style="color:var(--cream);max-width:600px;margin:0 auto 0.75rem;">Bring Pure, Traditional Ghee Into Your Home</h2>
+  <p class="cta-sub">Order directly via WhatsApp or write to us. Fresh batches made with care — delivered across Maharashtra.</p>
+  <div class="cta-actions">
+    <a href="https://wa.me/918820412325" class="btn-wa" target="_blank">📲 WhatsApp — +91 88204 12325</a>
+    <a href="mailto:devtatva@gmail.com" class="btn-ghost" style="color:var(--cream2);border-color:rgba(201,146,42,0.45);">✉ devtatva@gmail.com</a>
+  </div>
+  <span class="cta-orn b">✦ &nbsp; ✦ &nbsp; ✦ &nbsp; ✦ &nbsp; ✦</span>
+</section>
+
+<footer>
+  <div class="f-bar"></div>
+  <div>
+    <div class="f-logo">Dev<span>Tatva</span></div>
+    <div class="f-tag">भारत देशी तूप — Premium A2 Gir Cow Ghee</div>
+  </div>
+  <div class="f-info">
+    <p>
+      Prashant Milk Products · Chitkanthana MIDC, Aurangabad, MH 431101<br>
+      <a href="tel:+918820412325">+91-88204-12325</a> &nbsp;·&nbsp;
+      <a href="mailto:devtatva@gmail.com">devtatva@gmail.com</a> &nbsp;·&nbsp;
+      <a href="http://www.devtatva.com" target="_blank">www.devtatva.com</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
